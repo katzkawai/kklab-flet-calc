@@ -15,6 +15,15 @@ uv run main.py
 
 起動するとローカルの Web サーバーが立ち上がり、ブラウザで電卓が開きます（通常は `http://127.0.0.1:<port>`）。
 
+Flet CLI のホットリロードを使う場合も、必ず `--web` を付けてください。
+
+```bash
+uv run flet run --web main.py
+```
+
+`uv run flet run main.py` のように `--web` を付けない場合はネイティブのデスクトップモードで起動し、
+この環境では下記の OpenGL エラーで落ちます。
+
 ## 実行モードについて（重要）
 
 `ft.run(main)` のデフォルトは**ネイティブのデスクトップモード**（`FLET_APP`）で、
